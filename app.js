@@ -48,12 +48,12 @@ app.post("/",(req,res)=>{
             res.sendFile(__dirname+"/failure.html")
         }
         response.on("data",(data)=>{
-            
+            request.write(jsonData)
+            request.end()
+                    
         })
     })
 
-    request.write(jsonData)
-    request.end()
 
 })
 
